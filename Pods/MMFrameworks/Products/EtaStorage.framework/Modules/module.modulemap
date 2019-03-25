@@ -1,0 +1,6 @@
+framework module EtaStorage {
+  umbrella header "EtaStorage.h"
+
+  export *
+  module * { export * }
+}

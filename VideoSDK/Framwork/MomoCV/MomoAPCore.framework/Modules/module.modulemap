@@ -1,0 +1,6 @@
+framework module MomoAPCore {
+  umbrella header "MomoAPCore.h"
+
+  export *
+  module * { export * }
+}

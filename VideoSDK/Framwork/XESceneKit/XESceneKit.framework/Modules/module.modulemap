@@ -1,0 +1,6 @@
+framework module XESceneKit {
+  umbrella header "XESceneKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

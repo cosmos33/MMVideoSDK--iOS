@@ -1,0 +1,6 @@
+framework module XEScene {
+  umbrella header "XEScene-umbrella.h"
+
+  export *
+  module * { export * }
+}

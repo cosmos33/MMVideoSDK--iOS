@@ -1,0 +1,6 @@
+framework module tolua {
+  umbrella header "tolua-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "MMFrameworks",
+  "version": "2.5.15",
+  "summary": "Momo Frameworks  Base Layer.",
+  "homepage": "https://git.wemomo.com/bao.zhen/MMFrameworks",
+  "authors": {
+    "bao.zhen": "bao.zhen@immomo.com"
+  },
+  "source": {
+    "git": "https://git.wemomo.com/bao.zhen/MMFrameworks.git",
+    "tag": "MMFrameworks/2.5.15"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "description": "Momo base frameworks, such as MMFoundation, DB, Eta, Network, IMJ",
+  "static_framework": true,
+  "subspecs": [
+    {
+      "name": "MMFoundation",
+      "frameworks": "Foundation",
+      "vendored_frameworks": "Products/MMFoundation.framework",
+      "libraries": [
+        "z",
+        "resolv"
+      ]
+    },
+    {
+      "name": "Eta",
+      "frameworks": "Foundation",
+      "vendored_frameworks": "Products/Eta.framework"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+framework module RecordSDK {
+  umbrella header "MDRecordSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

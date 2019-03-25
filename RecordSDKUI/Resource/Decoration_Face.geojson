@@ -1,0 +1,48 @@
+{
+    "version": "13684",
+    "class": [{
+        "id": "26",
+        "selected_image_url": "http:\/\/img.momocdn.com\/app\/94\/79\/9479679D-C076-A2D9-F190-16324B01E46020170512.png",
+        "image_url": "http:\/\/img.momocdn.com\/app\/A2\/79\/A2797DE2-08F4-6A51-3BDB-7C5BF2CC523420170512.png",
+        "name": "情景"
+    }],
+    "items": {
+        "26": [{
+            "id": "5aa107fab3529",
+            "image_url": "http:\/\/img.momocdn.com\/app\/42\/CA\/42CAA76F-C724-7BFF-FC92-78D680DC713420180308.png",
+            "title": "手控樱花雨",
+            "is_arkit": 0,
+            "zip_url": "http:\/\/img.momocdn.com\/momentlib\/EC\/A9\/ECA93927-D8FD-902F-41AE-D1284D7DB07920180308.zip",
+            "version": 17,
+            "tag": "",
+            "sound": 0
+        }, {
+            "id": "595316e303137",
+            "image_url": "http:\/\/img.momocdn.com\/app\/F4\/0F\/F40F1BD0-B3EE-DB53-920A-8B2AE92973FA20170628.png",
+            "title": "蝴蝶头饰",
+            "is_arkit": 0,
+            "zip_url": "http:\/\/img.momocdn.com\/momentlib\/FF\/92\/FF92E9B5-A905-5D02-00DA-BBD6CF3D9E4D20170929.zip",
+            "version": 12,
+            "tag": "",
+            "sound": 0
+        }, {
+            "id": "5c051c7598ced",
+            "image_url": "http:\/\/img.momocdn.com\/app\/E5\/F4\/E5F4FF90-59B0-AB3D-30BD-9E919BA4643920181205.png",
+            "title": "满屏爱心",
+            "is_arkit": 0,
+            "zip_url": "http:\/\/img.momocdn.com\/momentlib\/D6\/70\/D67028AE-98AE-5E10-389A-25AA934AC73E20181204.zip",
+            "version": 20,
+            "tag": "",
+            "sound": 0
+        }, {
+            "id": "595b710dd27fa",
+            "image_url": "http:\/\/img.momocdn.com\/app\/3F\/99\/3F9943A2-2C8B-B418-E053-F9CE7111296620170707.png",
+            "title": "冰激凌抠图",
+            "is_arkit": 0,
+            "zip_url": "http:\/\/img.momocdn.com\/momentlib\/51\/0B\/510BA543-4633-7E2D-7BF6-AAB93FFE9CEC20170705.zip",
+            "version": 20,
+            "tag": "",
+            "sound": 0
+        }]
+    }
+}

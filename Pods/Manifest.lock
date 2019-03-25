@@ -1,0 +1,121 @@
+PODS:
+  - GPUImage (0.1.7)
+  - libwebp (1.0.2):
+    - libwebp/core (= 1.0.2)
+    - libwebp/dec (= 1.0.2)
+    - libwebp/demux (= 1.0.2)
+    - libwebp/dsp (= 1.0.2)
+    - libwebp/enc (= 1.0.2)
+    - libwebp/mux (= 1.0.2)
+    - libwebp/utils (= 1.0.2)
+    - libwebp/webp (= 1.0.2)
+  - libwebp/core (1.0.2):
+    - libwebp/webp
+  - libwebp/dec (1.0.2):
+    - libwebp/core
+  - libwebp/demux (1.0.2):
+    - libwebp/core
+  - libwebp/dsp (1.0.2):
+    - libwebp/core
+  - libwebp/enc (1.0.2):
+    - libwebp/core
+  - libwebp/mux (1.0.2):
+    - libwebp/core
+  - libwebp/utils (1.0.2):
+    - libwebp/core
+  - libwebp/webp (1.0.2)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MetalPetal (1.1.2):
+    - MetalPetal/Core (= 1.1.2)
+  - MetalPetal/Core (1.1.2)
+  - MJRefresh (3.1.15.7)
+  - MMFrameworks/Eta (2.5.15)
+  - MMFrameworks/MMFoundation (2.5.15)
+  - pop (1.0.12)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+  - SDWebImage/WebP (4.4.6):
+    - libwebp (>= 0.5)
+    - SDWebImage/Core
+  - Toast (4.0.0)
+  - VideoSDK (1.0.0):
+    - GPUImage
+    - MetalPetal
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - ZipArchive (1.4.0)
+
+DEPENDENCIES:
+  - GPUImage (from `https://github.com/NaichuanYang/GPUImage.git`, commit `3ba128277babc67048e10c5269694aebaa8bf581`)
+  - Masonry
+  - MBProgressHUD (~> 1.1.0)
+  - MetalPetal (= 1.1.2)
+  - MJRefresh
+  - MMFrameworks/Eta (from `./MMFramework`)
+  - MMFrameworks/MMFoundation (from `./MMFramework`)
+  - pop
+  - ReactiveCocoa (= 2.5)
+  - SDWebImage
+  - SDWebImage/WebP
+  - Toast (~> 4.0.0)
+  - VideoSDK (from `./`)
+  - YYImage
+  - ZipArchive
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - libwebp
+    - Masonry
+    - MBProgressHUD
+    - MetalPetal
+    - MJRefresh
+    - pop
+    - ReactiveCocoa
+    - SDWebImage
+    - Toast
+    - YYImage
+    - ZipArchive
+
+EXTERNAL SOURCES:
+  GPUImage:
+    :commit: 3ba128277babc67048e10c5269694aebaa8bf581
+    :git: https://github.com/NaichuanYang/GPUImage.git
+  MMFrameworks:
+    :path: "./MMFramework"
+  VideoSDK:
+    :path: "./"
+
+CHECKOUT OPTIONS:
+  GPUImage:
+    :commit: 3ba128277babc67048e10c5269694aebaa8bf581
+    :git: https://github.com/NaichuanYang/GPUImage.git
+
+SPEC CHECKSUMS:
+  GPUImage: bd7e201b9aa91e85f401ed7a6d9867a07a404693
+  libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MetalPetal: 57ac84529b61f607ce0cfcfba387b16d23305089
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MMFrameworks: 25f30733ef75766b1e88c7e9b07d87b582d9ec4c
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  VideoSDK: 60fc29a55172b481638d8d84ac743d8ad3a5f453
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
+
+PODFILE CHECKSUM: 126e87f4abdb5880e6902ce6c5a9e32e33a40f24
+
+COCOAPODS: 1.6.1

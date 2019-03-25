@@ -12,7 +12,7 @@ iOS版本: 9.0 +
 
 ## 导入
 
-本SDK目前支持以Pod方式导入，同时本SDK划分为Base, Camera, Photo, Video四部分。
+本SDK目前支持以Pod方式导入，同事本SDK划分为Base, Camera, Photo, Video四部分。
 
 * Base为基础组件，必须引用
 * Camera为视频录制模块

@@ -1,0 +1,6 @@
+framework module XESceneAR {
+  umbrella header "XEScene+AR-umbrella.h"
+
+  export *
+  module * { export * }
+}

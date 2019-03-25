@@ -1,0 +1,6 @@
+framework module XESceneLua {
+  umbrella header "XEScene+Lua-umbrella.h"
+
+  export *
+  module * { export * }
+}

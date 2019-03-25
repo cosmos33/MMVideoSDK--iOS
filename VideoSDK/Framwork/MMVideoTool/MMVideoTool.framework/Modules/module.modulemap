@@ -1,0 +1,6 @@
+framework module MMVideoTool {
+  umbrella header "MMVideoTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

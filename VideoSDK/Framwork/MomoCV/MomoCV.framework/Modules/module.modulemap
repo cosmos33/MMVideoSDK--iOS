@@ -1,0 +1,6 @@
+framework module MomoCV {
+  umbrella header "MomoCV-umbrella.h"
+
+  export *
+  module * { export * }
+}
