@@ -7,7 +7,7 @@ use_frameworks!
 
 target :MDRecordSDK do
     pod 'MMFrameworks', :path => './MMFramework', :subspecs => ['Eta', 'MMFoundation']
-    pod 'VideoSDK', :path => './'
+    pod 'MMVideoSDK', :path => './'
     pod 'MetalPetal', '1.1.2'
     pod 'GPUImage', :git => 'https://github.com/NaichuanYang/GPUImage.git', :commit => '3ba128277babc67048e10c5269694aebaa8bf581'
     pod 'Toast', '~> 4.0.0'

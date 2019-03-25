@@ -32,6 +32,9 @@ PODS:
   - MJRefresh (3.1.15.7)
   - MMFrameworks/Eta (2.5.15)
   - MMFrameworks/MMFoundation (2.5.15)
+  - MMVideoSDK (1.0.0):
+    - GPUImage
+    - MetalPetal
   - pop (1.0.12)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -47,9 +50,6 @@ PODS:
     - libwebp (>= 0.5)
     - SDWebImage/Core
   - Toast (4.0.0)
-  - VideoSDK (1.0.0):
-    - GPUImage
-    - MetalPetal
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -63,12 +63,12 @@ DEPENDENCIES:
   - MJRefresh
   - MMFrameworks/Eta (from `./MMFramework`)
   - MMFrameworks/MMFoundation (from `./MMFramework`)
+  - MMVideoSDK (from `./`)
   - pop
   - ReactiveCocoa (= 2.5)
   - SDWebImage
   - SDWebImage/WebP
   - Toast (~> 4.0.0)
-  - VideoSDK (from `./`)
   - YYImage
   - ZipArchive
 
@@ -92,7 +92,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/NaichuanYang/GPUImage.git
   MMFrameworks:
     :path: "./MMFramework"
-  VideoSDK:
+  MMVideoSDK:
     :path: "./"
 
 CHECKOUT OPTIONS:
@@ -108,14 +108,14 @@ SPEC CHECKSUMS:
   MetalPetal: 57ac84529b61f607ce0cfcfba387b16d23305089
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   MMFrameworks: 25f30733ef75766b1e88c7e9b07d87b582d9ec4c
+  MMVideoSDK: 0a4bbe2d0dbff8b6fea2ad166cd5b1d99f080965
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  VideoSDK: 60fc29a55172b481638d8d84ac743d8ad3a5f453
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 126e87f4abdb5880e6902ce6c5a9e32e33a40f24
+PODFILE CHECKSUM: 6c78fbacfeb34920051d210d614e7d64d94ba8be
 
 COCOAPODS: 1.6.1
