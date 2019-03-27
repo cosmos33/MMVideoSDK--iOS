@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "353C410272D9127AC10F4F1A494AC4E6"
+               BlueprintIdentifier = "F2A9F5868501224EE9B7B8B4C55F47CB"
                BuildableName = "MMVideoSDK"
                BlueprintName = "MMVideoSDK"
                ReferencedContainer = "container:Pods.xcodeproj">

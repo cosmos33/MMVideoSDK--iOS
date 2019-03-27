@@ -34,7 +34,8 @@ PODS:
   - MMFrameworks/MMFoundation (2.5.15)
   - MMVideoSDK (1.0.0):
     - GPUImage
-    - MetalPetal
+    - MetalPetal (= 1.1.2)
+    - ZipArchive
   - pop (1.0.12)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -59,7 +60,6 @@ DEPENDENCIES:
   - GPUImage (from `https://github.com/NaichuanYang/GPUImage.git`, commit `3ba128277babc67048e10c5269694aebaa8bf581`)
   - Masonry
   - MBProgressHUD (~> 1.1.0)
-  - MetalPetal (= 1.1.2)
   - MJRefresh
   - MMFrameworks/Eta (from `./MMFramework`)
   - MMFrameworks/MMFoundation (from `./MMFramework`)
@@ -70,7 +70,6 @@ DEPENDENCIES:
   - SDWebImage/WebP
   - Toast (~> 4.0.0)
   - YYImage
-  - ZipArchive
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -108,7 +107,7 @@ SPEC CHECKSUMS:
   MetalPetal: 57ac84529b61f607ce0cfcfba387b16d23305089
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   MMFrameworks: 25f30733ef75766b1e88c7e9b07d87b582d9ec4c
-  MMVideoSDK: 0a4bbe2d0dbff8b6fea2ad166cd5b1d99f080965
+  MMVideoSDK: 8e92825b78107fcfdfe37489a89dfa7ba51b65e6
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
@@ -116,6 +115,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 6c78fbacfeb34920051d210d614e7d64d94ba8be
+PODFILE CHECKSUM: f004d440a2f29732536b486d4820527511f4b6aa
 
 COCOAPODS: 1.6.1

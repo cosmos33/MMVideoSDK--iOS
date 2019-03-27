@@ -1,6 +1,0 @@
-framework module MFDB {
-  umbrella header "MFDB.h"
-
-  export *
-  module * { export * }
-}

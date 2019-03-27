@@ -1,6 +1,0 @@
-framework module Eta {
-  umbrella header "Eta.h"
-
-  export *
-  module * { export * }
-}

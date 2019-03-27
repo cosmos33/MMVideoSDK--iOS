@@ -31,6 +31,6 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => '$(inherited) NO', 'OTHER_LDFLAGS' => '$(inherited) -ObjC', 'MTL_LANGUAGE_REVISION' => 'Metal12'}
   
   s.dependency 'GPUImage'
-  s.dependency 'MetalPetal'
+  s.dependency 'MetalPetal', '1.1.2'
   s.dependency 'ZipArchive'
 end
