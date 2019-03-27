@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMVideoSDK'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'short videos record and edit'
 
   s.description      = <<-DESC
