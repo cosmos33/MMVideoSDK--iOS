@@ -32,4 +32,5 @@ Pod::Spec.new do |s|
   
   s.dependency 'GPUImage'
   s.dependency 'MetalPetal'
+  s.dependency 'ZipArchive'
 end
