@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMVideoSDK'
-  s.version          = '1.0.1'
+  s.version          = '1.0.1.1'
   s.summary          = 'short videos record and edit'
 
   s.description      = <<-DESC
@@ -22,8 +22,9 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.frameworks = 'ARKit', 'AVFoundation', 'CoreVideo', 'CoreMedia', 'CoreAudio', 'CoreML', 'AssetsLibrary', 'Vision', 'CoreML', 'Accelerate', 'Metal', 'MetalKit', 'CoreGraphics'
+  s.frameworks = 'AVFoundation', 'CoreVideo', 'CoreMedia', 'CoreAudio', 'AssetsLibrary',  'Accelerate', 'CoreGraphics'
   s.libraries = 'c++', 'resolv', 'z', 'iconv'
+  s.weak_frameworks = 'ARKit', 'CoreML', 'Vision', 'Metal', 'MetalKit'
 
   s.resources = 'VideoSDK/Resource/*'
 
