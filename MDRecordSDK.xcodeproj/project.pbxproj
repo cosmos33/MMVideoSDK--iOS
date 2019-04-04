@@ -912,6 +912,9 @@
 		76FFC03122411E9A0067ADE4 /* StaticExpression.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StaticExpression.geojson; sourceTree = "<group>"; };
 		76FFC03222411E9A0067ADE4 /* Decoration_Face.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Decoration_Face.geojson; sourceTree = "<group>"; };
 		76FFC14722411F0E0067ADE4 /* MDRecordSDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDRecordSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		76FFE4482255B21400956785 /* MMVideoSDK相关UI接入指南.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "MMVideoSDK相关UI接入指南.md"; sourceTree = "<group>"; };
+		76FFE4492255B21400956785 /* IOS_拍摄器SDK_V1.0测试报告.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IOS_拍摄器SDK_V1.0测试报告.xlsx"; sourceTree = "<group>"; };
+		76FFE44A2255B21400956785 /* MMVideoSDK接入指南.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "MMVideoSDK接入指南.md"; sourceTree = "<group>"; };
 		9DF96216696D33B4F8CD0764 /* Pods-MDRecordSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRecordSDK.release.xcconfig"; path = "Target Support Files/Pods-MDRecordSDK/Pods-MDRecordSDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1017,6 +1020,9 @@
 		76CDB2EB224334BA0014D31E /* doc */ = {
 			isa = PBXGroup;
 			children = (
+				76FFE4492255B21400956785 /* IOS_拍摄器SDK_V1.0测试报告.xlsx */,
+				76FFE44A2255B21400956785 /* MMVideoSDK接入指南.md */,
+				76FFE4482255B21400956785 /* MMVideoSDK相关UI接入指南.md */,
 				76CDB2EC224334BA0014D31E /* SDK接入文档.md */,
 				76CDB2ED224334BA0014D31E /* RecordSDK接口文档.md */,
 			);

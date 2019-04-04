@@ -120,7 +120,7 @@
    // 设置编码格式
    [adapter setVideoCodecKey:AVVideoCodecH264];  
    // 设置码率
-   [adapter setVideoBitRate:recordBitRate];
+   [adapter setVideoBitRate:5.0 * 1024 * 1024];
    // 设置视频分辨率
    [adapter setVideoResolution:CGSizeMake(720, 1280)];
    // 设置视频缩放模式
@@ -128,7 +128,7 @@
    // 设置采样分辨率
    [adapter setCameraPreset:AVCaptureSessionPreset1280x720];
    // 设置摄像头位置
-   [adapter setCameraPosition:position];
+   [adapter setCameraPosition:AVCaptureDevicePositionFront];;
    // 初始化摄像机
    [adapter setupRecorder];
 ```
