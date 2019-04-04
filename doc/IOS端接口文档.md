@@ -8,38 +8,38 @@
 
 * 设置APPID
 
-```objective-c
+```c
     + (void)initSDK:(NSString *)appID;
 ```
 
-* 注册APP获取Token
+* 拉取配置文件
 
-```objective-c
-    + (void)registerToken
+```c
+    + (void)fetchConfigUsingAppId
 ```
 
 * 添加回调函数。 selector 可添加 `MDRecordCallbackMessage` 类型的参数
 
-```objective-c
+```c
 + (void) addCommandListener: (SEL) mSelctor target:(id) mTarget;
 ```
 
 * 获取SDK version
 
-```objective-c
+```c
 + (NSString *)version;
 ```
 
 * 获取Token
 
-```objective-c
+```c
     + (NSString *)appToken;
 ```
 
 * 设置人脸识别预加载器
 
-```objective-c
-    + (void)setDetectorModelsPreloader:(id<MDRecordDetectorPreloader>)preloader;
+```c
+    - (void)config;
 ```
 
 ## 录制模块
@@ -48,61 +48,61 @@
 
 * 获取显示视图
 
-```objective-c
+```c
     @property (nonatomic, strong, readonly) UIView<MLPixelBufferDisplay> *previewView;
 ```
 
 * 设置最大录制时长
 
-```objective-c
+```c
     - (void)setMaxRecordDuration:(NSTimeInverval)duration;
 ```
 
 * 设置生成视屏编码格式, 参数参考  `AVVideoCodecType`
 
-```objective-c
+```c
     - (void)setVideoCodecKey:(NSString *)codeckey;
 ```
 
 * 设置生成视频码率
 
-```objective-c
+```c
     - (void)setVideoBitRate:(float)bitrate;
 ```
 
 * 设置生成视频分辨率
 
-```objective-c
+```c
     - (void)setVideoResolution:(CGSize)resolution;
 ```
 
 * 设置生成视频填充模式(等比适应/等比填充/拉伸)，参数参考 `AVVideoScalingModeKey`
 
-```objective-c
+```c
     - (void)setVideoScaleMode:(NSString *)scaleMode;
 ```
 
 * 设置摄像头采样分辨率, 参考 `AVCaptureSessionPreset`
 
-```objective-c
+```c
     - (void)setCameraPreset:(NSString *)preset;
 ```
 
 * 设置摄像头初始位置
 
-```objective-c
+```c
     - (void)setCameraPosition:(AVCaptureDevicePosition *)position;
 ```
 
 * 初始化相机
 
-```objective-c
+```c
     - (void)setupRecorder;
 ```
 
 * 获取录制最大时长
 
-```objective-c
+```c
     - (NSTimeInterval)recordDuration;
 ```
 
@@ -110,7 +110,7 @@
 
 * 设置闪光灯模式
 
-```objective-c
+```c
     // 是否支持闪光灯
     - (BOOL)hasFlash;
 
@@ -123,55 +123,55 @@
 
 * 是否存在相机输入源
 
-```objective-c
+```c
 - (BOOL)hasVideoInput;
 ```
 
 * 切换摄像头
 
-```objective-c
+```c
     - (void)switchCameraPosition;
 ```
 
 * 获取当前摄像头位置
 
-```objective-c
+```c
 @property (nonatomic, assign, readonly) AVCaptureDevicePosition cameraPosition;
 ```
 
 * 摄像头聚焦
 
-```objective-c
+```c
     - (void)focusCameraInPoint:(CGPoint)pointInCamera;
 ```
 
 * 开启预览
 
-```objective-c
+```c
     - (void)startCapturing;
 ```
 
 * 暂停预览
 
-```objective-c
+```c
     - (void)pauseCapturing;
 ```
 
 * 结束预览
 
-```objective-c
+```c
     - (void)stopCapturing;
 ```
 
 * 拍照
 
-```objective-c
+```c
     - (void)takePhoto;
 ```
 
 * 拍照回调
 
-```objective-c
+```c
     // 即将开始拍照
     @property (nonatomic, copy) void (^captureStillImageWillHandler)(void);
 
@@ -182,138 +182,138 @@
 
 * 设置设备方向
 
-```objective-c
+```c
 @property (nonatomic, assign) UIDeviceOrientation outputOrientation;
 ```
 
 * 是否可以录制
 
-```objective-c
+```c
     - (BOOL)canStartRecording;
 ```
 
 * 开始录制
 
-```objective-c
+```c
     - (void)startRecording;
 ```
 
 * 完成一段录制
 
-```objective-c
+```c
     - (void)pauseRecording;
 ```
 
 * 取消当前段录制
 
-```objective-c
+```c
     - (void)cancelRecording;
 ```
 
 * 结束录制
 
-```objective-c
+```c
     - (void)stopVideoCaptureWithOutputURL:(NSURL *)URL
                     completionHandler:(void (^)(NSURL *videoFileURL, NSError *error))completionHandler;
 ```
 
 * 获得分段数量
 
-```objective-c
+```c
     - (NSInteger)savedSegmentCount;
 ```
 
 * 删除最后一个分段
 
-```objective-c
+```c
     - (void)deleteLastSavedSegment;
 ```
 
 * 重置录制操作(移除所有已录制的视频片段以及录制状态)
 
-```objective-c
+```c
     - (void)resetRecorder;
 ```
 
 * 清除暂存文件
 
-```objective-c
+```c
     - (void)cleanStashFile;
 ```
 
 * 是否正在录制
 
-```objective-c
+```c
     @property (nonatomic, readonly) BOOL isRecording;
 ```
 
 * 获取当前录制时长
 
-```objective-c
+```c
     @property (nonatomic, readonly) NSTimeInterval currentRecordingDuration;
 ```
 
 * 获取变速后实际展示时长
 
-```objective-c
+```c
     @property (nonatomic, readonly) NSTimeInterval currentRecordingPresentDuration;
 ```
 
 * 是否正在合成视频
 
-```objective-c
+```c
 @property (nonatomic, assign, readonly) BOOL stopMerge;
 ```
 
 * 录制进度回调
 
-```objective-c
+```c
     @property (nonatomic, copy) void (^recordProgressChangedHandler)(double progress);
 ```
 
 * 到达最大录制时长回调
 
-```objective-c
+```c
     @property (nonatomic, copy) void (^recordDurationReachedHandler)(void);
 ```
 
 * 导出视频进度回调
 
-```objective-c
+```c
     @property (nonatomic, copy) void (^completeProgressUpdateHandler)(double progress);
 ```
 
 * 录制片段增加/删除
 
-```objective-c
+```c
 @property (nonatomic,copy) void (^recordSegmentsChangedHandler)(NSArray *durations, NSArray *presentDurations, BOOL valid , MDRecordSegmentStatus segmentStatus)
 ```
 
-```objective-c
+```c
     - (void)configFilterA:(MDRecordFilter *)filterA configFilterB:(MDRecordFilter *)filterB offset:(float)offset;
 ```
 
 * 增加美颜滤镜/贴纸
 
-```objective-c
+```c
     - (void)updateDecoration:(FDKDecoration *)decoration;
 ```
 
 * 移除美颜/贴纸
 
-```objective-c
+```c
 - (void)removeDecoration;
 ```
 
 * 调整贴纸自带音效音量
 
-```objective-c
+```c
 - (void)adjustStikcerVolume:(float)volume;
 ```
 
 * 光膀子检测
 
-```objective-c
+```c
 // 是否开启光膀子检测
 - (void)activateBarenessDetectorEnable:(BOOL)enable;
 // 是否存在光膀子
@@ -324,92 +324,92 @@
 
 * 是否使用AI美颜功能 (iOS 10以上开启)
 
-```objective-c
+```c
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
 ```
 
 * 是否启用瘦身长腿功能
 
-```objective-c
+```c
 @property (nonatomic, assign) BOOL canUseBodyThinSetting;
 ```
 
 * 是否检测到人脸
 
-```objective-c
+```c
 @property (nonatomic, readonly) BOOL isFaceCaptured;
 ```
 
 * 重置检测器状态
 
-```objective-c
+```c
 - (void)resetState;
 ```
 
 * 清除贴纸缓存
 
-```objective-c
+```c
     - (void)clean;
 ```
 
 * 配乐
 
-```objective-c
+```c
     // 音乐资源
     @property (nonatomic, strong) AVAsset *backgroundAudio;
 ```
 
 * 美颜设置
 
-```objective-c
+```c
 - (void)setBeautyConfiguration:(CXBeautyConfiguration *)config;
 ```
 
 * 美白
 
-```objective-c
+```c
 - (void)setSkinWhitenValue:(float)value;
 ```
 
 * 磨皮
 
-```objective-c
+```c
 - (void)setSkinSmoothValue:(float)value;
 ```
 
 * 大眼
 
-```objective-c
+```c
     - (void)setBeautyBigEyeValue:(float)value;
 ```
 
 * 瘦脸
 
-```objective-c
+```c
     - (void)setBeautyThinFaceValue:(float)value;
 ```
 
 * 瘦身
 
-```objective-c
+```c
     - (void)setBeautyThinBodyValue:(float)value;
 ```
 
 * 长腿
 
-```objective-c
+```c
     - (void)setBeautyLenghLegValue:(float)value;
 ```
 
 * 启用3D引擎
 
-```objective-c
+```c
     - (void)runXESEngineWithDecorationRootPath:(NSString *)path;
 ```
 
 * 变速
 
-```objective-c
+```c
     // 设置变速因子 (0.2 - 4.0)
     - (void)setNextRecordSegmentSpeedVaryFactor:(CGFloat)factor;
     // 获取当前变速因子
@@ -426,61 +426,61 @@
 
 * 加载视频
 
-```objective-c
+```c
 - (void)loadVideo:(AVAsset *)asset;
 ```
 
 * 视频裁剪
 
-```objective-c
+```c
 - (void)setVideoTimeRange:(CMTimeRange)timeRange;
 ```
 
 * 设置变速效果
 
-```objective-c
+```c
 - (void)setTimeRangeMappingEffects:(NSArray<id<MLTimeRangeMappingEffect>> *)timeRangeMappingEffects;
 ```
 
 * 这是重复片段
 
-```objective-c
+```c
 - (void)setMediaSourceRepeatRange:(CMTimeRange)timeRange;
 ```
 
 * 设置配乐
 
-```objective-c
+```c
 @property (nonatomic, strong) NSURL *backgroundAudioURL;
 ```
 
 * 裁剪配乐
 
-```objective-c
+```c
 @property (nonatomic, assign) CMTimeRange backgroundAudioRange;
 ```
 
 * 设置原音量
 
-```objective-c
+```c
 - (void)setSourceVolume:(float)volume;
 ```
 
 * 设置配乐音量
 
-```objective-c
+```c
 - (void)setBackgroundMusicVolume:(float)volume;
 ```
 
 * 合成视频
 
-```objective-c
+```c
 - (BOOL)compositeVideoWithError:(NSError **)error;
 ```
 
 * 更新音频音量
 
-```objective-c
+```c
 - (void)updateAudioMix;
 ```
 
@@ -488,217 +488,217 @@
 
 * 开始播放
 
-```objective-c
+```c
     - (void)play;
 ```
 
 * 停止播放
 
-```objective-c
+```c
     - (void)stop;
 ```
 
 * 暂停播放
 
-```objective-c
+```c
     - (void)pause;
 ```
 
 * 重新开始播放
 
-```objective-c
+```c
     - (void)replay;
 ```
 
 * 获得视频展示页面
 
-```objective-c
+```c
 @property (nonatomic, readonly) UIViewController *playerViewController;
 ```
 
 * 获取播放器
 
-```objective-c
+```c
     @property (nonatomic, readonly) AVPlayer *player;
 ```
 
 * 是否正在播放
 
-```objective-c
+```c
     @property (nonatomic, readonly) BOOL isPlaying;
 ```
 
 * seek到某一时间点
 
-```objective-c
+```c
     - (void)seekTime:(float)time;
 ```
 
 * 获取总时长
 
-```objective-c
+```c
     - (NSTimeInverval)duration;
 ```
 
 * 获得当前播放时间
 
-```objective-c
+```c
    - (NSTimeInterval)getCurrentPlayTime;
 ```
 
 * 设置播放器刷新频率(默认30帧每秒)
 
-```objective-c
+```c
     - (void)setPlayerPerferredFPS:(int)fps;
 ```
 
 * 获得视频渲染frame
 
-```objective-c
+```c
 @property (nonatomic, readonly) CGRect videoRenderFrame;
 ```
 
 * 获得当前合成的视频
 
-```objective-c
+```c
 @property (nonatomic, readonly) AVComposition *composition;
 ```
 
 * 等待视频渲染队列中所有任务完成
 
-```objective-c
+```c
 - (void)waitUntilAllOperationsAreFinished;
 ```
 
 * 播放结束
 
-```objective-c
+```c
     @property (nonatomic, copy) void(^ _Nullable playToEndTime)(AVPlayer *player);
 ```
 
 * 播放进度
 
-```objective-c
+```c
     @property (nonatomic, copy) void(^ _Nullable playerPeriodicTimeCallback)(CMTime time);
 ```
 
 * 切换滤镜
 
-```objective-c
+```c
     - (void)configFilterA:(MDRecordFilter *)filterA configFilterB:(MDRecordFilter *)filterB offset:(float)offset;
 ```
 
 * 翻转特效滤镜
 
-```objecitve-c
+```c
 - (void)setReverse:(BOOL)reverse;
 ```
 
 * 添加特效滤镜
 
-```objective-c
+```c
     - (void)addSpecialFilter:(GPUImageOutput<GPUImageInput, MDSpecialFilterLifeStyleProtocol> *)newTarget timeRange:(CMTimeRange)range;
 ```
 
 * 移除最后一个特效滤镜
 
-```objective-c
+```c
     - (void)deleteLastSpecialFilter;
 ```
 
 * 移除所有特效滤镜
 
-```objective-c
+```c
     - (void)deleteAllSpecialFilters;
 ```
 
 * 更新某时刻特效滤镜起作用是时段
 
-```objecitve-c
+```c
 - (void)updateCurrentFilterWithTime:(CMTime)time timeRange:(CMTimeRange)timeRange;
 ```
 
 * 获得当前所有添加的特效滤镜
 
-```objecitve-c
+```c
 - (NSArray<GPUImageOutput<GPUImageInput, MDSpecialFilterLifeStyleProtocol> *> *)specialFilters;
 ```
 
 * 是否有添加特效滤镜
 
-```objecitve-c
+```c
 - (BOOL)hasSpecialFilter;
 ```
 
 * 添加动态贴纸
 
-```objective-c
+```c
     - (void)addDynamicSticker:(MDRecordDynamicSticker *)dynamicSticker;
 ```
 
 * 删除动态贴纸
 
-```objective-c
+```c
     - (void)removeDynamicSticker:(MDRecordDynamicSticker *)dynamicSticker;
 ```
 
 * 增加美颜滤镜
 
-```objective-c
+```c
     - (void)updateDecoration:(FDKDecoration *)decoration;
 ```
 
 * 移除美颜
 
-```objective-c
+```c
     - (void)removeDecoration;
 ```
 
 * 美白
 
-```objective-c
+```c
 - (void)setSkinWhitenValue:(float)value;
 ```
 
 * 磨皮
 
-```objective-c
+```c
 - (void)setSkinSmoothValue:(float)value;
 ```
 
 * 大眼
 
-```objective-c
+```c
     - (void)setBeautyBigEyeValue:(float)value;
 ```
 
 * 瘦脸
 
-```objective-c
+```c
     - (void)setBeautyThinFaceValue:(float)value;
 ```
 
 * 瘦身
 
-```objective-c
+```c
     - (void)setBeautyThinBodyValue:(float)value;
 ```
 
 * 长腿
 
-```objective-c
+```c
     - (void)setBeautyLenghLegValue:(float)value;
 ```
 
 * 获取当前涂鸦图片
 
-```objective-c
+```c
 @property (nonatomic, readonly) UIImage *mosaicCanvasImage;
 ```
 
 * 设置涂鸦或者马赛克
 
-```objective-c
+```c
 - (void)setGraffitiCanvasImage:(UIImage * _Nullable)graffitiCanvasImage mosaicCanvasImage:(UIImage * _Nullable)mosaicCanvasImage;
 ```
 
@@ -706,37 +706,37 @@
 
 * 图片融合
 
-```objective-c
+```c
 @property (nonatomic, strong) UIImage * _Nullable overlayImage;
 ```
 
 * 设置导出码率
 
-```objective-c
+```c
     @property (nonatomic, assign) float targetBitRate;
 ```
 
 * 设置导出分辨率
 
-```objective-c
+```c
     @property (nonatomic, assign) CGSize presentationSize;
 ```
 
 * 设置视频旋转
 
-```objective-c
+```c
 @property (nonatomic, assign) CGAffineTransform videoPerferredTransform;
 ```
 
 * 设置是否使用滤镜效果
 
-```objective-c
+```c
     - (void)enableFilterEffect:(BOOL)enable;
 ```
 
 * 开始导出
 
-```objective-c
+```c
 - (id<MDCancellable>)exportToURL:(NSURL *)url
                  progressHandler:(void(^ _Nullable)(double progress))progressHandler
                       completion:(void(^ _Nullable)(NSURL *url))completion
@@ -749,72 +749,72 @@
 
 * 加载图片
 
-```objective-c
+```c
     - (void)loadImage:(UIImage *)image completionHander:(void(^)(CVPixelBufferRef _Nullable, NSError * _Nullable))completion;
 ```
 
 * 处理图片
 
-```objective-c
+```c
     - (void)startProcess;
 ```
 
 * 停止处理并释放资源
 
-```objective-c
+```c
     - (void)stopProcess;
 ```
 
 * 切换滤镜
 
-```objective-c
+```c
     - (void)configFilterA:(MDRecordFilter *)filterA configFilterB:(MDRecordFilter *)filterB offset:(float)offset;
 ```
 
 * 增加美颜滤镜
 
-```objective-c
+```c
     - (void)updateDecoration:(FDKDecoration *)decoration;
 ```
 
 * 美白
 
-```objective-c
+```c
     - (void)setSkinWhitenValue:(float)value;
 ```
 
 * 磨皮
 
-```objective-c
+```c
     - (void)setSkinSmoothValue:(float)value;
 ```
 
 * 大眼
 
-```objective-c
+```c
     - (void)setBeautyBigEyeValue:(float)value;
 ```
 
 * 瘦脸
 
-```objective-c
+```c
     - (void)setBeautyThinFaceValue:(float)value;
 ```
 
 * 瘦身
 
-```objective-c
+```c
     - (void)setBeautyThinBodyValue:(float)value;
 ```
 
 * 长腿
 
-```objective-c
+```c
     - (void)setBeautyLenghLegValue:(float)value;
 ```
 
 * 移除美颜
 
-```objective-c
+```c
     - (void)removeDecoration;
 ```

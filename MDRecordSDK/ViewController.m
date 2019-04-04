@@ -172,19 +172,15 @@
     __weak typeof(containerVC) weakContainerVC = containerVC;
     
     MDUnifiedRecordSettingItem *settingItem = [MDUnifiedRecordSettingItem defaultConfigForSendFeed];
-//    settingItem.recordLog.enterenceType = (levelType == MDUnifiedRecordLevelTypeAsset ? MDUnifiedRecordEnterenceTypeAlbum : MDUnifiedRecordEnterenceTypeRecord);
     settingItem.levelType = levelType;
     settingItem.completeHandler = ^(id result) {
         
         if ([result isKindOfClass:[MDRecordVideoResult class]]) {
             MDRecordVideoResult *videoResult = result;
-//            [self releaseFeedWithVideoResult:videoResult];
-            
+            // use result to do something ...
         } else if ([result isKindOfClass:[MDRecordImageResult class]]) {
             MDRecordImageResult *imageResult = (MDRecordImageResult *)result;
-            if (levelType == MDUnifiedRecordLevelTypeAsset) {
-                [self createImageEditVC:imageResult.photoItems.firstObject.originImage];
-            }
+            // use result to do something ...
         }
         
         [weakContainerVC dismissViewControllerAnimated:YES completion:nil];

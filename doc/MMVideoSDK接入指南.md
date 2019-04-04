@@ -10,7 +10,7 @@ MMVideoSDK提供两种方式供iOS开发者选择。
 在工程的Podfile添加以下代码:
 
 ```ruby
-pod 'MMVideoSDK', '1.0.2'
+pod 'MMVideoSDK', '1.0.1'
 ```
 
 保存并执行`pod install`。
@@ -61,13 +61,13 @@ pod 'MMVideoSDK', '1.0.2'
 
 在工程AppDelegate.m 文件导入头文件
 
-```objective-c
+```c
     @import RecordSDK;
 ```
 
 * 初始化
 
-```objective-c
+```c
     [MDRecordManager initSDK:@"此处替换为您的AppId"];
     if ([MDRecordManager isReady]) {
         [MDRecordManager fetchConfigUsingAppId];

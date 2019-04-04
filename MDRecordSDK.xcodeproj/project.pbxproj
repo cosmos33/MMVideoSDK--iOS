@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7603417C225607FF00713A03 /* IOS端对外接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = 7603417A225607FF00713A03 /* IOS端对外接入文档.md */; };
+		7603417D225607FF00713A03 /* IOS端接口文档.md in Resources */ = {isa = PBXBuildFile; fileRef = 7603417B225607FF00713A03 /* IOS端接口文档.md */; };
 		7631D4C2221A56D400133824 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7631D4C1221A56D400133824 /* OpenGLES.framework */; };
 		7631D4C4221A56DA00133824 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7631D4C3221A56DA00133824 /* GLKit.framework */; };
 		7631D4C6221A655E00133824 /* MRCA.cer in Resources */ = {isa = PBXBuildFile; fileRef = 7631D4C5221A655E00133824 /* MRCA.cer */; };
@@ -328,6 +330,8 @@
 		1A177B4501E9C9898397D076 /* Pods-MDRecordSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRecordSDK.debug.xcconfig"; path = "Target Support Files/Pods-MDRecordSDK/Pods-MDRecordSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		1A98627BBF085E90F16AC435 /* Pods_MDRecordSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDRecordSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA32092BCB458C008F614A4 /* Pods-MDRecordSDK.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRecordSDK.inhouse.xcconfig"; path = "Target Support Files/Pods-MDRecordSDK/Pods-MDRecordSDK.inhouse.xcconfig"; sourceTree = "<group>"; };
+		7603417A225607FF00713A03 /* IOS端对外接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "IOS端对外接入文档.md"; sourceTree = "<group>"; };
+		7603417B225607FF00713A03 /* IOS端接口文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "IOS端接口文档.md"; sourceTree = "<group>"; };
 		7631D4C1221A56D400133824 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7631D4C3221A56DA00133824 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7631D4C5221A655E00133824 /* MRCA.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = MRCA.cer; sourceTree = "<group>"; };
@@ -365,8 +369,6 @@
 		767D69EB223EC04600FA343E /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		768B457B2241F7FF008D4675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		768B457D2241F817008D4675 /* RecordAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RecordAssets.xcassets; sourceTree = "<group>"; };
-		76CDB2EC224334BA0014D31E /* SDK接入文档.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "SDK接入文档.md"; sourceTree = "<group>"; };
-		76CDB2ED224334BA0014D31E /* RecordSDK接口文档.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "RecordSDK接口文档.md"; sourceTree = "<group>"; };
 		76D21F8921B0C938001103B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		76E9A88921AFDDB5002B191A /* MDRecordSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDRecordSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E9A88C21AFDDB5002B191A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1023,8 +1025,8 @@
 				76FFE4492255B21400956785 /* IOS_拍摄器SDK_V1.0测试报告.xlsx */,
 				76FFE44A2255B21400956785 /* MMVideoSDK接入指南.md */,
 				76FFE4482255B21400956785 /* MMVideoSDK相关UI接入指南.md */,
-				76CDB2EC224334BA0014D31E /* SDK接入文档.md */,
-				76CDB2ED224334BA0014D31E /* RecordSDK接口文档.md */,
+				7603417A225607FF00713A03 /* IOS端对外接入文档.md */,
+				7603417B225607FF00713A03 /* IOS端接口文档.md */,
 			);
 			path = doc;
 			sourceTree = "<group>";
@@ -2145,10 +2147,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FFC14322411E9B0067ADE4 /* filters.bundle in Resources */,
+				7603417C225607FF00713A03 /* IOS端对外接入文档.md in Resources */,
 				768B457E2241F817008D4675 /* RecordAssets.xcassets in Resources */,
 				76FFC14522411E9B0067ADE4 /* StaticExpression.geojson in Resources */,
 				7665F7352241DD1A006F5999 /* GT.bundle in Resources */,
 				76FFC13722411E9B0067ADE4 /* README.md in Resources */,
+				7603417D225607FF00713A03 /* IOS端接口文档.md in Resources */,
 				76FFC13622411E9B0067ADE4 /* LICENSE.md in Resources */,
 				76FFC14622411E9B0067ADE4 /* Decoration_Face.geojson in Resources */,
 				768B457C2241F7FF008D4675 /* Assets.xcassets in Resources */,

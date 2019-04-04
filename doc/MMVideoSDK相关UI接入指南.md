@@ -25,7 +25,7 @@
 
 * 在`Project_name-Bridging-Header.h`文件中，写入
 
-```objective-c
+```c
 #import "MDFaceTipManager.h"
 #import "MDFaceTipItem.h"
 #import "MDRecordingAdapter+MDAudioPitch.h"
@@ -60,3 +60,38 @@
 
 * 进入 `EditScheme` -> `Run` -> `Options`, 更改`GPU Frame Capture` 以及 `Metal API Validation` 均为 `Disabled`
 * 进入主工程`build settings`, 设置`project`以及`target`的`Enable Bitcode`为`NO`
+
+## 调用
+
+```c
+
+- (void)gotoRecord:(MDUnifiedRecordLevelType)levelType {
+    if (![MDCameraContainerViewController checkDevicePermission]) {
+        return;
+    }
+
+    MDCameraContainerViewController *containerVC = [[MDCameraContainerViewController alloc] init];
+    
+    __weak typeof(containerVC) weakContainerVC = containerVC;
+    MDUnifiedRecordSettingItem *settingItem = [MDUnifiedRecordSettingItem defaultConfigForSendFeed];
+    settingItem.levelType = levelType;
+    settingItem.completeHandler = ^(id result) {
+
+        if ([result isKindOfClass:[MDRecordVideoResult class]]) {
+            MDRecordVideoResult *videoResult = result;
+            // use result to do something ...
+        } else if ([result isKindOfClass:[MDRecordImageResult class]]) {
+            MDRecordImageResult *imageResult = (MDRecordImageResult *)result;
+            // use result to do something ...
+        }
+
+        [weakContainerVC dismissViewControllerAnimated:YES completion:nil];
+    };
+
+    containerVC.recordSetting = settingItem;
+
+    MDNavigationController *nav = [MDNavigationController md_NavigationControllerWithRootViewController:containerVC];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+```

@@ -30,7 +30,7 @@
 
 * 获取版本号
 
-```objective-c
+```c
 + (NSString *)version;
 ```
 
@@ -56,19 +56,19 @@
 
 * 首先通过`MDRecordManger`类调用
 
-```objective-c
+```c
 + (void)initSDK:(NSString *)appID;
 ```
 
 方法传入appID完成SDK初始化。然后通过
 
-```objective-c
-+ (void)registerToken;
+```c
++ (void)fetchConfigUsingAppId;
 ```
 
-方法注册获取Token。可通过
+拉取配置文件。可通过
 
-```objective-c
+```c
 + (void) addCommandListener: (SEL) mSelctor target:(id) mTarget;
 ```
 
@@ -76,27 +76,19 @@
 
 之后可通过 `MDRecordManger` 类
 
-```objective-c
+```c
 + (NSString *)appToken;
 ```
 
 方法获取`Token`. 该`Token`用于初始化相关功能类句柄。
 
-* 初始化 `MDRecordDetectorManger` 对象，然后将该对象传入 `MDRecordManger` 类的
+* 调用`MDRecordDetectorManger`类
 
-```objective-c
-+ (void)setDetectorModelsPreloader:(id<MDRecordDetectorPreloader>)preloader;
+```c
+- (void)config;
 ```
 
-以便模型进行预加载(需要优先于`registerToken`方法的调用)。
-
-* 将 `MDRecordDetectorManger` 对象，同样设置给 `MDRecordDetectorProxy` 单例对象的
-
-```objective-c
-@property (nonatomic, strong) id<MDRecordDetectorCreator> creator;
-```
-
-属性，用于人脸检测器创建与加载。
+初始化模型加载器, 用于模型下载以及创建。
 
 ## 视频录制
 
@@ -110,13 +102,13 @@
 
 * 初始化
 
-```objective-c
+```c
    _adapter = [[MDRecordingAdapter alloc] initWithToken:@"Token"];
 ```
 
 * 设置相机参数并初始化相机
 
-```objective-c
+```c
    // 设置编码格式
    [adapter setVideoCodecKey:AVVideoCodecH264];  
    // 设置码率
@@ -135,7 +127,7 @@
 
 * 获得预览视图, 并添加到view层级中
 
-```objective-c
+```c
    UIView<MLPixelBufferDisplay> *previewView = self.adapter.previewView;
    previewView.frame = containerView.frame;
    [containerView addSubview:previewView];
@@ -143,7 +135,7 @@
 
 * 开启相机
 
-```objective-c
+```c
     // 开启相机
     [self.adapter startCapturing];
 
@@ -153,13 +145,13 @@
 
 * 聚焦
 
-```objective-c
+```c
    [self.adapter focusCameraInPoint:pointInCamera];
 ```
 
 * 拍照
 
-```objective-c
+```c
     // 设置即将拍照回调
     self.adapter.captureStillImageWillHandler = self.captureStillImageWillHandler;
     // 设置拍照完成的回调
@@ -170,19 +162,19 @@
 
 * 旋转相机
 
-```objective-c
+```c
    [self.adapter switchCameraPosition];
 ```
 
 * 设置最大录制时长
 
-```objective-c
+```c
     [self.adapter setMaxRecordDuration:60];
 ```
 
 * 录制一段视频，多次调用可以录制多段视频
 
-```objective-c
+```c
     // 开始录制
     [self.adapter startRecording];
     // 完成一段录制
@@ -191,14 +183,14 @@
 
 * 结束录制
 
-```objective-c
+```c
     // 结束录制，并将录制的多段视频合并后导出整个视频文件
     [self.adapter stopVideoCaptureWithOutputURL:destUrl completionHandler:completionHandler];
 ```
 
 * 删除已录制片段
 
-```objective-c
+```c
     // 删除最后一段录制内容
     [self.recorder deleteLastVideoSegment];
 
@@ -208,7 +200,7 @@
 
 * 获取录制相关信息
 
-```objective-c
+```c
     // 能否启用录制
     self.adapter.isRecording;
     // 获得已录制的视频时长
@@ -221,13 +213,13 @@
 
 * 设置配乐
 
-```objective-c
+```c
     self.adapter.backgroundAudio = backgroundAudio;
 ```
 
 * 贴纸
 
-```objective-c
+```c
     // 添加贴纸
     [self.adapter updateDecoration:decoration];
     // 移除贴纸
@@ -238,13 +230,13 @@
 
 * 切换滤镜
 
-```objective-c
+```c
     [self.adapter configFilterA:filterA configFilterB:filterB offset:filterOffset];
 ```
 
 * 设置美颜参数
 
-```objective-c
+```c
     // 磨皮, 参数范围0-1
     [self.adapter setSkinSmoothValue:skinSmoothFactor];
     // 美白, 参数范围0-1
@@ -261,7 +253,7 @@
 
 * 变速
 
-```objective-c
+```c
    // 是否允许当前段变速, 允许传入YES
    [self.adapter speedVaryShouldAllow:isAllow];
    // 设置当前段变速因子, 取值范围 0.2 - 4.0
@@ -282,13 +274,13 @@
 
 * 初始化
 
-```objective-c
+```c
     _adapter = [[MDVideoEditorAdapter alloc] initWithToken:@"Token"];
 ```
 
 * 获取播放视图
 
-```objective-c
+```c
    self.adapter.playerViewController.view.frame = self.viewController.view.bounds;
    [self.viewController addChildViewController:self.adapter.playerViewController];
    [self.viewController.view insertSubview:self.adapter.playerViewController.view atIndex:0];
@@ -297,7 +289,7 @@
 
 * 视频播放
 
-```objective-c
+```c
     // 播放
     [self.adapter play];
     // 暂停
@@ -310,7 +302,7 @@
 
 * 播放事件处理
 
-```objective-c
+```c
     // 播放结束回调
     __weak typeof(self) weakself = self;
     self.adapter.playToEndTime = ^(AVPlayer * _Nonnull player) {
@@ -331,7 +323,7 @@
 
 * 视频处理
 
-```objective-c
+```c
     MDVideoEditorAdapter *adapter = self.adapter;
     // 视频裁剪时间段
     [adapter setVideoTimeRange:videoInsertTimeRange];
@@ -357,7 +349,7 @@
 
 **注意：** 在调用`compositeVideoWithError:`方法前，所有对视频或者配乐的编辑行为均不生效。
 
-```objective-c
+```c
     // 设置原音音量
     [adapter setSourceVolume:sourceAudioVolume];
     // 设置背景音音量
@@ -370,7 +362,7 @@
 
 * 贴纸
 
-```objective-c
+```c
     // 添加贴纸
     [self.adapter updateDecoration:decoration];
     // 移除贴纸
@@ -381,13 +373,13 @@
 
 * 切换滤镜
 
-```objective-c
+```c
     [self.adapter configFilterA:filterA configFilterB:filterB offset:filterOffset];
 ```
 
 * 设置美颜参数
 
-```objective-c
+```c
     // 磨皮, 参数范围0-1
     [self.adapter setSkinSmoothValue:skinSmoothFactor];
     // 美白, 参数范围0-1
@@ -404,13 +396,13 @@
 
 * 融合涂鸦图片
 
-```objective-c
+```c
    [self.adapter setGraffitiCanvasImage:canvasImage mosaicCanvasImage:mosaicCanvasImage];
 ```
 
 * 动态贴纸
 
-```objective-c
+```c
    // 添加贴纸
    [self.adapter addDynamicSticker:(id)sticker];
    // 移除贴纸(与添加时候需要是同一个对象)
@@ -419,7 +411,7 @@
 
 * 特效滤镜
 
-```objective-c
+```c
    // 在某一时间段内添加特效滤镜
    [self.adapter addSpecialFilter:filter timeRange:timeRange];
    // 移除最后一个特效滤镜
@@ -436,7 +428,7 @@
 
 **注意：** 目前SDK默认支持 雨窗，灵魂出窍，抖动，故障，四宫格五中特效滤镜。分别为: 
 
-```objective-c
+```c
    MDRecordRainWindowFilter
    MDRecordSoulOutFilter
    MDRecordShakeFilter
@@ -448,7 +440,7 @@
 
 * 导出
 
-```objective-c
+```c
     // 设置导出时候要融合的图片
     self.adapter.overlayImage = customOverlay;
     // 设置导出码率
@@ -484,13 +476,13 @@
 
 * 初始化
 
-```objective-c
+```c
     _adapter = [[MDImageEditorAdapter alloc] initWithToken:@"Token"];
 ```
 
 * 加载图片
 
-```objective-c
+```c
     // 加载图片并设置回调，回调函数返回处理完成的结果
     [self.adapter loadImage:originImage completionHander:^(CVPixelBufferRef renderedPixelBuffer, NSError * error) {
             __strong typeof(self) strongself = weakself;
@@ -509,7 +501,7 @@
 
 * 处理图片
 
-```objective-c
+```c
     // 开始处理
     [self.adapter startProcess];
 
@@ -519,13 +511,13 @@
 
 * 切换滤镜
 
-```objective-c
+```c
     [self.adapter configFilterA:filterA configFilterB:filterB offset:filterOffset];
 ```
 
 * 设置美颜参数
 
-```objective-c
+```c
     // 磨皮, 参数范围0-1
     [self.adapter setSkinSmoothValue:skinSmoothFactor];
     // 美白, 参数范围0-1
